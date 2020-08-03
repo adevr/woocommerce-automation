@@ -1,0 +1,15 @@
+{
+  "name": "woocommerce-automation",
+  "version": "1.0.0",
+  "description": "Automation process to setup a copy from woocommerce templates to child theme folder",
+  "scripts": {
+    "automation": "node index.js"
+  },
+  "main": "index.js",
+  "repository": "git@github.com:adevr/woocommerce-automation.git",
+  "author": "adevr <alex.cst.reis@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "yargs": "^15.4.1"
+  }
+}

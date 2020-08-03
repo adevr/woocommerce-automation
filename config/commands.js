@@ -6,6 +6,14 @@ const argv = yargs
 			alias : "-p",
 			type: "string"
 		}
-	}).argv;
+	})
+	.command("--theme", "Theme folder name", {
+		theme : {
+			alias: "-t",
+			type: "string"
+		}
+	})
+	.argv;
 
 module.exports = argv;
+

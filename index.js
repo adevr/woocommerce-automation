@@ -8,12 +8,17 @@ const { commandDir } = require("yargs");
 let projectPath;
 
 try{
+    console.log(commands.path);
     projectPath = fs.readdirSync(commands.path);
 }catch (e) {
     throw new Error("Directory Not found");
 }
 
-files.cart.forEach(file => {
+files.cart.forEach((file, index) => {
     // review path builder
-    fs.copyFile(`${commands.path}${paths.woocommerce}archive-product.php`, `${commands.path}${paths.themes}${commands.theme}`) 
+    let folder = Object.keys(files)[index];
+    console.log(file, index, folder);
+    fs.copyFile(`${commands.path}${paths.woocommerce}${folder}/${file}`, `${commands.path}${paths.themes}${commands.theme}${paths.childtheme}${folder}/`, (data) => {
+        console.log(data);
+    });
 });
